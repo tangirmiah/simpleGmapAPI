@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMAPapi2020</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>Google Map Api Coursework</h1>
+      <div class="columns col-gapless">
+        
+        <div class="form-group col-3 ">
+          <label class="form-label" for="input-lat">Latitude</label>
+          <input
+            class="form-input"
+            type="text"
+            id="input-lat"
+            placeholder="Latitude"
+          />
+        </div>
+        <div class="form-group col-3">
+          <label class="form-label" for="input-lon">Longitude</label>
+          <input
+            class="form-input"
+            type="text"
+            id="input-lon"
+            placeholder="Longitude"
+          />
+        </div>
+        <button
+          id="center-btn"
+          class="btn col-2 center-btn btn-success tooltip"
+          data-tooltip="Add Lat and Lng and center the map"
+        >
+          Center Map
+        </button>
+      </div>
+      <div class="columns col-gapless">
+        
+        <div id="map" class="col-9"></div>
+        
+        <!-- button segment -->
+        <div class="columns col-gapless col-1 px-2 ">
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 1 -->
+            <a
+              id="btn-1"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Add a new marker to a preferred location"
+              href="#btn-1-modal"
+              >Button 1</a
+            >
+            <!-- modal for button 1 -->
+            <div class="modal modal-sm" id="btn-1-modal">
+              <a href="#close" class="modal-overlay" aria-label="Close"></a>
+              <div class="modal-container">
+                <div class="form-group">
+                  <label class="form-label" for="input-lat-btn1"
+                    >Latitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lat-btn1"
+                    placeholder="Latitude"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="input-lon-btn1"
+                    >Longitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lon-btn1"
+                    placeholder="Longitude"
+                  />
+                </div>
+                <a
+                  id="modal-btn1"
+                  class="btn btn-success tooltip tooltip-bottom"
+                  data-tooltip="Add a marker to this location"
+                  href="#close"
+                >
+                  Add
+                </a>
+              </div>
+            </div>
+            <!-- end of modal -->
+            <!-- end button 1 -->
+          </div>
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 2 -->
+            <a
+              id="btn-2"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Get marker on random location"
+              href="#"
+              >Button 2</a
+            >
+            <!-- end button 2 -->
+          </div>
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 3 -->
+            <a
+              id="btn-3"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Add a marker to this a given location,&#10  click on it for antipode"
+              href="#btn-3-modal"
+              >Button 3</a
+            >
+            <!-- modal for button 3 -->
+            <div class="modal modal-sm" id="btn-3-modal">
+              <a href="#close" class="modal-overlay" aria-label="Close"></a>
+              <div class="modal-container">
+                <div class="form-group">
+                  <label class="form-label" for="input-lat-btn1"
+                    >Latitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lat-btn3"
+                    placeholder="Latitude"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="input-lon-btn1"
+                    >Longitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lon-btn3"
+                    placeholder="Longitude"
+                  />
+                </div>
+                <a
+                  id="modal-btn3"
+                  class="btn btn-success tooltip tooltip-bottom"
+                  data-tooltip="Add a marker to this location"
+                  href="#close"
+                >
+                  Add
+                </a>
+              </div>
+            </div>
+            <!-- end of modal -->
+
+            <!-- end button 3 -->
+          </div>
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 4 -->
+            <a
+              id="btn-4"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Add a marker to a given location,&#10 Green markers will make a square"
+              href="#btn-4-modal"
+              >Button 4</a
+            >
+            <!-- modal for button 4 -->
+            <div class="modal modal-sm" id="btn-4-modal">
+              <a href="#close" class="modal-overlay" aria-label="Close"></a>
+              <div class="modal-container">
+                <div class="form-group">
+                  <label class="form-label" for="input-lat-btn1"
+                    >Latitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lat-btn4"
+                    placeholder="Latitude"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="input-lon-btn1"
+                    >Longitude</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="input-lon-btn4"
+                    placeholder="Longitude"
+                  />
+                </div>
+                <a
+                  id="modal-btn4"
+                  class="btn btn-success tooltip tooltip-bottom"
+                  data-tooltip="Add a marker to this location"
+                  href="#close"
+                >
+                  Add
+                </a>
+              </div>
+            </div>
+            <!-- end of modal -->
+            <!-- end button 4 -->
+          </div>
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 5 -->
+            <a
+              id="btn-5"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Enable drawing of a reagon in the map"
+              href="#"
+              >Button 5</a
+            >
+            <!-- end button 5 -->
+          </div>
+          <div class="columns col-gapless  col-12">
+            <!-- initialize button 6 -->
+            <a
+              id="btn-6"
+              class="btn btn-lg btn-primary tooltip tooltip-right"
+              data-tooltip="Make a panoramic trip"
+              href="#"
+              >Button 6</a
+            >
+            <!-- end button 6 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="main.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_gHvNobQD5E9nxwJCFK2fBw8gpsTP1nQ&callback=initMap&libraries=geometry"
+      async
+      defer
+    ></script>
+  </body>
+</html>

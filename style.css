@@ -1,0 +1,33 @@
+#map {
+  min-height: 78vh;
+  max-width: 100vw;
+  position: fixed;
+  border: 2px solid #5755d9;
+}
+
+#center-btn:hover {
+  background: #228b22 !important;
+}
+
+.form-group {
+  padding: 3px;
+}
+
+.center-btn {
+  margin-top: 38px;
+}
+#modal-btn1,
+#modal-btn4,
+#modal-btn3 {
+  margin-bottom: 5px;
+}
+
+.btn.btn-primary {
+  background: #4d79ff;
+  border-color: #4d79ff;
+  color: #fff;
+}
+
+.navbar {
+  background: black;
+}
